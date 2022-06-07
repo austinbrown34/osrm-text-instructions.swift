@@ -268,14 +268,15 @@ extension NSAttributedString: Tokenized {
         }
         
         var type = step.maneuverType
-        let modifier = step.maneuverDirection.description
+        let modifier = step.maneuverDirection?.rawValue.description
+//        let modifier = step.maneuverDirection.description
         let mode = step.transportType
 
         if type != .depart && type != .arrive && modifier == .none {
             return nil
         }
 
-        if instructions[type.description] == nil {
+        if instructions[type.rawValue.description] == nil {
             // OSRM specification assumes turn types can be added without
             // major version changes. Unknown types are to be treated as
             // type `turn` by clients
@@ -288,7 +289,7 @@ extension NSAttributedString: Tokenized {
         switch type {
         case .takeRotary, .takeRoundabout:
             // Special instruction types have an intermediate level keyed to “default”.
-            let instructionsByModifier = instructions[type.description] as! [String: InstructionsByModifier]
+            let instructionsByModifier = instructions[type.rawValue.description] as! [String: InstructionsByModifier]
             let defaultInstructions = instructionsByModifier["default"]!
             
             wayName = NSAttributedString(string: step.exitNames?.first ?? "", attributes: attrs)
@@ -304,11 +305,11 @@ extension NSAttributedString: Tokenized {
                 instructionObject = defaultInstructions["default"]!
             }
         default:
-            var typeInstructions = instructions[type.description] as! InstructionsByModifier
+            var typeInstructions = instructions[type.rawValue.description] as! InstructionsByModifier
             let modesInstructions = instructions["modes"] as? InstructionsByModifier
-            if let modesInstructions = modesInstructions, let modesInstruction = modesInstructions[mode.description] {
+            if let modesInstructions = modesInstructions, let modesInstruction = modesInstructions[mode.rawValue.description] {
                 instructionObject = modesInstruction
-            } else if let typeInstruction = typeInstructions[modifier] {
+            } else if let typeInstruction = typeInstructions[modifier!] {
                 instructionObject = typeInstruction
             } else {
                 instructionObject = typeInstructions["default"]!
@@ -406,7 +407,7 @@ extension NSAttributedString: Tokenized {
             exitOrdinal = ordinalFormatter.string(from: exitIndex as NSNumber)!
         }
         let modifierConstants = constants["modifier"] as! [String: String]
-        let modifierConstant = modifierConstants[modifier == "none" ? "straight" : modifier]!
+        let modifierConstant = modifierConstants[(modifier == "none" ? "straight" : modifier)!]!
         var bearing: Int? = nil
         if step.finalHeading != nil { bearing = Int(step.finalHeading! as Double) }
 
