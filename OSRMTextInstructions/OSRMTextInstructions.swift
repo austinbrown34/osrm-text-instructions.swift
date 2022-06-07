@@ -6,7 +6,7 @@ let OSRMTextInstructionsStrings = NSDictionary(contentsOfFile: Bundle(for: OSRMI
 
 protocol Tokenized {
     associatedtype T
-    
+
     /**
      Replaces `{tokens}` in the receiver using the given closure.
      */
@@ -17,27 +17,27 @@ extension String: Tokenized {
     public var sentenceCased: String {
         return prefix(1).uppercased() + dropFirst()
     }
-    
+
     public func replacingTokens(using interpolator: ((TokenType) -> String)) -> String {
         let scanner = Scanner(string: self)
         scanner.charactersToBeSkipped = nil
         var result = ""
         while !scanner.isAtEnd {
             var buffer: NSString?
-            
+
             if scanner.scanUpTo("{", into: &buffer) {
                 result += buffer! as String
             }
             guard scanner.scanString("{", into: nil) else {
                 continue
             }
-            
+
             var token: NSString?
             guard scanner.scanUpTo("}", into: &token) else {
                 result += "{"
                 continue
             }
-            
+
             if scanner.scanString("}", into: nil) {
                 if let tokenType = TokenType(description: token! as String) {
                     result += interpolator(tokenType)
@@ -48,10 +48,10 @@ extension String: Tokenized {
                 result += "{\(token!)"
             }
         }
-        
+
         // remove excess spaces
         result = result.replacingOccurrences(of: "\\s\\s", with: " ", options: .regularExpression)
-        
+
         // capitalize
         let meta = OSRMTextInstructionsStrings["meta"] as! [String: Any]
         if meta["capitalizeFirstLetter"] as? Bool ?? false {
@@ -68,19 +68,19 @@ extension NSAttributedString: Tokenized {
         let result = NSMutableAttributedString()
         while !scanner.isAtEnd {
             var buffer: NSString?
-            
+
             if scanner.scanUpTo("{", into: &buffer) {
                 result.append(NSAttributedString(string: buffer! as String))
             }
             guard scanner.scanString("{", into: nil) else {
                 continue
             }
-            
+
             var token: NSString?
             guard scanner.scanUpTo("}", into: &token) else {
                 continue
             }
-            
+
             if scanner.scanString("}", into: nil) {
                 if let tokenType = TokenType(description: token! as String) {
                     result.append(interpolator(tokenType))
@@ -89,11 +89,11 @@ extension NSAttributedString: Tokenized {
                 result.append(NSAttributedString(string: token! as String))
             }
         }
-        
+
         // remove excess spaces
         let wholeRange = NSRange(location: 0, length: result.mutableString.length)
         result.mutableString.replaceOccurrences(of: "\\s\\s", with: " ", options: .regularExpression, range: wholeRange)
-        
+
         // capitalize
         let meta = OSRMTextInstructionsStrings["meta"] as! [String: Any]
         if meta["capitalizeFirstLetter"] as? Bool ?? false {
@@ -106,7 +106,7 @@ extension NSAttributedString: Tokenized {
 @objc public class OSRMInstructionFormatter: Formatter {
     let version: String
     let instructions: [String: Any]
-    
+
     let ordinalFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.locale = .current
@@ -115,33 +115,33 @@ extension NSAttributedString: Tokenized {
         }
         return formatter
     }()
-    
+
     @objc public init(version: String) {
         self.version = version
         self.instructions = OSRMTextInstructionsStrings[version] as! [String: Any]
-        
+
         super.init()
     }
-    
+
     required public init?(coder decoder: NSCoder) {
         if let version = decoder.decodeObject(of: NSString.self, forKey: "version") as String? {
             self.version = version
         } else {
             return nil
         }
-        
+
         if let instructions = decoder.decodeObject(of: [NSDictionary.self, NSArray.self, NSString.self], forKey: "instructions") as? [String: Any] {
             self.instructions = instructions
         } else {
             return nil
         }
-        
+
         super.init(coder: decoder)
     }
-    
+
     override public func encode(with coder: NSCoder) {
         super.encode(with: coder)
-        
+
         coder.encode(version, forKey: "version")
         coder.encode(instructions, forKey: "instructions")
     }
@@ -149,17 +149,17 @@ extension NSAttributedString: Tokenized {
     var constants: [String: Any] {
         return instructions["constants"] as! [String: Any]
     }
-    
+
     /**
      Returns a format string with the given name.
-     
+
      - returns: A format string suitable for `String.replacingTokens(using:)`.
      */
     @objc public func phrase(named name: PhraseName) -> String {
         let phrases = instructions["phrase"] as! [String: String]
         return phrases["\(name)"]!
     }
-    
+
     func laneConfig(intersection: Intersection) -> String? {
         guard let approachLanes = intersection.approachLanes else {
             return ""
@@ -219,17 +219,17 @@ extension NSAttributedString: Tokenized {
             return "";
         }
     }
-    
+
     typealias InstructionsByToken = [String: String]
     typealias InstructionsByModifier = [String: InstructionsByToken]
-    
+
     override public func string(for obj: Any?) -> String? {
         return string(for: obj, legIndex: nil, numberOfLegs: nil, roadClasses: nil, modifyValueByKey: nil)
     }
-    
+
     /**
      Creates an instruction given a step and options.
-     
+
      - parameter step: The step to format.
      - parameter legIndex: Current leg index the user is currently on.
      - parameter numberOfLegs: Total number of `RouteLeg` for the given `Route`.
@@ -241,7 +241,7 @@ extension NSAttributedString: Tokenized {
         guard let obj = obj else {
             return nil
         }
-        
+
         var modifyAttributedValueByKey: ((TokenType, NSAttributedString) -> NSAttributedString)?
         if let modifyValueByKey = modifyValueByKey {
             modifyAttributedValueByKey = { (key: TokenType, value: NSAttributedString) -> NSAttributedString in
@@ -250,10 +250,10 @@ extension NSAttributedString: Tokenized {
         }
         return attributedString(for: obj, legIndex: legIndex, numberOfLegs: numberOfLegs, roadClasses: roadClasses, modifyValueByKey: modifyAttributedValueByKey)?.string
     }
-    
+
     /**
      Creates an instruction as an attributed string given a step and options.
-     
+
      - parameter obj: The step to format.
      - parameter attrs: The default attributes to use for the returned attributed string.
      - parameter legIndex: Current leg index the user is currently on.
@@ -266,7 +266,7 @@ extension NSAttributedString: Tokenized {
         guard let step = obj as? RouteStep else {
             return nil
         }
-        
+
         var type = step.maneuverType
         let modifier = step.maneuverDirection?.rawValue.description
 //        let modifier = step.maneuverDirection.description
@@ -291,7 +291,7 @@ extension NSAttributedString: Tokenized {
             // Special instruction types have an intermediate level keyed to “default”.
             let instructionsByModifier = instructions[type.rawValue.description] as! [String: InstructionsByModifier]
             let defaultInstructions = instructionsByModifier["default"]!
-            
+
             wayName = NSAttributedString(string: step.exitNames?.first ?? "", attributes: attrs)
             if let _rotaryName = step.names?.first, let _ = step.exitIndex, let obj = defaultInstructions["name_exit"] {
                 instructionObject = obj
@@ -314,12 +314,12 @@ extension NSAttributedString: Tokenized {
             } else {
                 instructionObject = typeInstructions["default"]!
             }
-            
+
             // Set wayName
             let name = step.names?.first
             let ref = step.codes?.first
             let isMotorway = roadClasses?.contains(.motorway) ?? false
-            
+
             if let name = name, let ref = ref, name != ref, !isMotorway {
                 let attributedName = NSAttributedString(string: name, attributes: attrs)
                 let attributedRef = NSAttributedString(string: ref, attributes: attrs)
@@ -435,10 +435,10 @@ extension NSAttributedString: Tokenized {
                 return modifyValueByKey?(tokenType, attributedReplacement) ?? attributedReplacement
             }
         }
-        
+
         return result
     }
-    
+
     override public func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?, for string: String, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
         return false
     }
