@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		35228C531E5E17050082B14F /* Polyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35228C521E5E17050082B14F /* Polyline.framework */; };
-		35228C551E5E17090082B14F /* MapboxDirections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35228C541E5E17090082B14F /* MapboxDirections.framework */; };
 		352BBC2C1E5E4D4200703DF1 /* OSRMTextInstructionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352BBC2B1E5E4D4200703DF1 /* OSRMTextInstructionsTests.swift */; };
 		352BBC2E1E5E4D4200703DF1 /* OSRMTextInstructions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35EBDB5D1E5E1572006EB3CD /* OSRMTextInstructions.framework */; };
 		352BBC391E5E5AB400703DF1 /* osrm-text-instructions in Resources */ = {isa = PBXBuildFile; fileRef = 352BBC381E5E5AB400703DF1 /* osrm-text-instructions */; };
@@ -44,10 +42,8 @@
 		DA9CB7751F6C72D800AD2E21 /* PhraseName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9CB7731F6C72D800AD2E21 /* PhraseName.swift */; };
 		DA9CB7761F6C72D800AD2E21 /* PhraseName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9CB7731F6C72D800AD2E21 /* PhraseName.swift */; };
 		DA9CB7771F6C72D800AD2E21 /* PhraseName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9CB7731F6C72D800AD2E21 /* PhraseName.swift */; };
-		E970A85E284F380800F319BB /* MapboxDirections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E970A85D284F380800F319BB /* MapboxDirections.framework */; platformFilter = ios; };
-		E970A85F284F380800F319BB /* MapboxDirections.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E970A85D284F380800F319BB /* MapboxDirections.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E970A862284F382700F319BB /* Polyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E970A861284F382700F319BB /* Polyline.framework */; platformFilter = ios; };
-		E970A863284F382700F319BB /* Polyline.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E970A861284F382700F319BB /* Polyline.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E970A872284F426800F319BB /* Polyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E970A861284F382700F319BB /* Polyline.framework */; platformFilter = ios; };
+		E970A875284F426D00F319BB /* MapboxDirections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E970A85D284F380800F319BB /* MapboxDirections.framework */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,21 +69,6 @@
 			remoteInfo = OSRMTextInstructionsTV;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		E970A860284F380800F319BB /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				E970A863284F382700F319BB /* Polyline.framework in Embed Frameworks */,
-				E970A85F284F380800F319BB /* MapboxDirections.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		35228C521E5E17050082B14F /* Polyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Polyline.framework; path = Carthage/Build/iOS/Polyline.framework; sourceTree = "<group>"; };
@@ -132,10 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E970A85E284F380800F319BB /* MapboxDirections.framework in Frameworks */,
-				35228C531E5E17050082B14F /* Polyline.framework in Frameworks */,
-				E970A862284F382700F319BB /* Polyline.framework in Frameworks */,
-				35228C551E5E17090082B14F /* MapboxDirections.framework in Frameworks */,
+				E970A872284F426800F319BB /* Polyline.framework in Frameworks */,
+				E970A875284F426D00F319BB /* MapboxDirections.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +304,6 @@
 				35EBDB5A1E5E1572006EB3CD /* Headers */,
 				35EBDB5B1E5E1572006EB3CD /* Resources */,
 				DA2DFB411E84521100CEEBE9 /* Copy Instructions Property Lists */,
-				E970A860284F380800F319BB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
