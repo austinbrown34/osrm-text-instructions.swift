@@ -21,29 +21,23 @@
 		DA5F58AC1E85B0A500BA4D0A /* OSRMTextInstructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358D14581E5E355600ADE590 /* OSRMTextInstructions.swift */; };
 		DA5F58AD1E85B0A500BA4D0A /* TokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51B63E81E65FA04002F4634 /* TokenType.swift */; };
 		DA5F58AE1E85B0AE00BA4D0A /* OSRMTextInstructionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352BBC2B1E5E4D4200703DF1 /* OSRMTextInstructionsTests.swift */; };
-		DA5F58C11E85B43200BA4D0A /* MapboxDirections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5F58B61E85B24E00BA4D0A /* MapboxDirections.framework */; };
-		DA5F58C21E85B43200BA4D0A /* Polyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5F58B71E85B24E00BA4D0A /* Polyline.framework */; };
 		DA5F58E11E85BDCE00BA4D0A /* osrm-text-instructions in Resources */ = {isa = PBXBuildFile; fileRef = 352BBC381E5E5AB400703DF1 /* osrm-text-instructions */; };
 		DA5F58E21E85BDCE00BA4D0A /* osrm-text-instructions in Resources */ = {isa = PBXBuildFile; fileRef = 352BBC381E5E5AB400703DF1 /* osrm-text-instructions */; };
 		DA5F58E31E85BE1100BA4D0A /* OSRMTextInstructions.h in Headers */ = {isa = PBXBuildFile; fileRef = 358D14571E5E355600ADE590 /* OSRMTextInstructions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA5F58E41E85BE1500BA4D0A /* OSRMTextInstructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358D14581E5E355600ADE590 /* OSRMTextInstructions.swift */; };
 		DA5F58E51E85BE1500BA4D0A /* TokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51B63E81E65FA04002F4634 /* TokenType.swift */; };
 		DA5F58E61E85BE1900BA4D0A /* OSRMTextInstructionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352BBC2B1E5E4D4200703DF1 /* OSRMTextInstructionsTests.swift */; };
-		DA5F58EA1E85BE5C00BA4D0A /* MapboxDirections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5F58E81E85BE5C00BA4D0A /* MapboxDirections.framework */; };
-		DA5F58EB1E85BE5C00BA4D0A /* Polyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5F58E91E85BE5C00BA4D0A /* Polyline.framework */; };
 		DA5F58ED1E85BF2D00BA4D0A /* OSRMTextInstructions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5F58C81E85BA5D00BA4D0A /* OSRMTextInstructions.framework */; };
-		DA5F58EE1E85C10700BA4D0A /* MapboxDirections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5F58E81E85BE5C00BA4D0A /* MapboxDirections.framework */; };
 		DA5F58FC1E85C19A00BA4D0A /* OSRMTextInstructions.h in Headers */ = {isa = PBXBuildFile; fileRef = 358D14571E5E355600ADE590 /* OSRMTextInstructions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA5F58FD1E85C19E00BA4D0A /* OSRMTextInstructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358D14581E5E355600ADE590 /* OSRMTextInstructions.swift */; };
 		DA5F58FE1E85C19E00BA4D0A /* TokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51B63E81E65FA04002F4634 /* TokenType.swift */; };
-		DA5F59011E85C1B200BA4D0A /* MapboxDirections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5F58FF1E85C1B200BA4D0A /* MapboxDirections.framework */; };
-		DA5F59021E85C1B200BA4D0A /* Polyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5F59001E85C1B200BA4D0A /* Polyline.framework */; };
 		DA9CB7741F6C72D800AD2E21 /* PhraseName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9CB7731F6C72D800AD2E21 /* PhraseName.swift */; };
 		DA9CB7751F6C72D800AD2E21 /* PhraseName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9CB7731F6C72D800AD2E21 /* PhraseName.swift */; };
 		DA9CB7761F6C72D800AD2E21 /* PhraseName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9CB7731F6C72D800AD2E21 /* PhraseName.swift */; };
 		DA9CB7771F6C72D800AD2E21 /* PhraseName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9CB7731F6C72D800AD2E21 /* PhraseName.swift */; };
 		E970A872284F426800F319BB /* Polyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E970A861284F382700F319BB /* Polyline.framework */; platformFilter = ios; };
-		E970A875284F426D00F319BB /* MapboxDirections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E970A85D284F380800F319BB /* MapboxDirections.framework */; platformFilter = ios; };
+		E97B0EB92883D33B0012F4BE /* Turf.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97B0EB82883D33B0012F4BE /* Turf.xcframework */; };
+		E97B0EBA2883D33B0012F4BE /* Turf.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E97B0EB82883D33B0012F4BE /* Turf.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,9 +64,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E97B0EBB2883D33B0012F4BE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E97B0EBA2883D33B0012F4BE /* Turf.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		35228C521E5E17050082B14F /* Polyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Polyline.framework; path = Carthage/Build/iOS/Polyline.framework; sourceTree = "<group>"; };
-		35228C541E5E17090082B14F /* MapboxDirections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxDirections.framework; path = Carthage/Build/iOS/MapboxDirections.framework; sourceTree = "<group>"; };
 		352BBC291E5E4D4200703DF1 /* OSRMTextInstructionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSRMTextInstructionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		352BBC2B1E5E4D4200703DF1 /* OSRMTextInstructionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSRMTextInstructionsTests.swift; sourceTree = "<group>"; };
 		352BBC2D1E5E4D4200703DF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,18 +92,12 @@
 		DA5F02771F6CBAAF0040C4AD /* TokenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenTests.swift; sourceTree = "<group>"; };
 		DA5F58931E85A32C00BA4D0A /* OSRMTextInstructions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OSRMTextInstructions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5F589B1E85A32C00BA4D0A /* OSRMTextInstructionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSRMTextInstructionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA5F58B61E85B24E00BA4D0A /* MapboxDirections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxDirections.framework; path = Carthage/Build/Mac/MapboxDirections.framework; sourceTree = "<group>"; };
-		DA5F58B71E85B24E00BA4D0A /* Polyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Polyline.framework; path = Carthage/Build/Mac/Polyline.framework; sourceTree = "<group>"; };
 		DA5F58C81E85BA5D00BA4D0A /* OSRMTextInstructions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OSRMTextInstructions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5F58D01E85BA5D00BA4D0A /* OSRMTextInstructionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSRMTextInstructionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA5F58E81E85BE5C00BA4D0A /* MapboxDirections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxDirections.framework; path = Carthage/Build/tvOS/MapboxDirections.framework; sourceTree = "<group>"; };
-		DA5F58E91E85BE5C00BA4D0A /* Polyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Polyline.framework; path = Carthage/Build/tvOS/Polyline.framework; sourceTree = "<group>"; };
 		DA5F58F41E85C13700BA4D0A /* OSRMTextInstructions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OSRMTextInstructions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA5F58FF1E85C1B200BA4D0A /* MapboxDirections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxDirections.framework; path = Carthage/Build/watchOS/MapboxDirections.framework; sourceTree = "<group>"; };
-		DA5F59001E85C1B200BA4D0A /* Polyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Polyline.framework; path = Carthage/Build/watchOS/Polyline.framework; sourceTree = "<group>"; };
 		DA9CB7731F6C72D800AD2E21 /* PhraseName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhraseName.swift; sourceTree = "<group>"; };
-		E970A85D284F380800F319BB /* MapboxDirections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxDirections.framework; path = "Carthage/Build/MapboxDirections.xcframework/ios-arm64_armv7/MapboxDirections.framework"; sourceTree = "<group>"; };
 		E970A861284F382700F319BB /* Polyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Polyline.framework; path = "Carthage/Build/Polyline.xcframework/ios-arm64_armv7/Polyline.framework"; sourceTree = "<group>"; };
+		E97B0EB82883D33B0012F4BE /* Turf.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Turf.xcframework; path = Carthage/Build/Turf.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E97B0EB92883D33B0012F4BE /* Turf.xcframework in Frameworks */,
 				E970A872284F426800F319BB /* Polyline.framework in Frameworks */,
-				E970A875284F426D00F319BB /* MapboxDirections.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,8 +122,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA5F58C11E85B43200BA4D0A /* MapboxDirections.framework in Frameworks */,
-				DA5F58C21E85B43200BA4D0A /* Polyline.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +137,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA5F58EA1E85BE5C00BA4D0A /* MapboxDirections.framework in Frameworks */,
-				DA5F58EB1E85BE5C00BA4D0A /* Polyline.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +145,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA5F58ED1E85BF2D00BA4D0A /* OSRMTextInstructions.framework in Frameworks */,
-				DA5F58EE1E85C10700BA4D0A /* MapboxDirections.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,8 +152,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA5F59011E85C1B200BA4D0A /* MapboxDirections.framework in Frameworks */,
-				DA5F59021E85C1B200BA4D0A /* Polyline.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,16 +161,8 @@
 		35228C511E5E17040082B14F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E97B0EB82883D33B0012F4BE /* Turf.xcframework */,
 				E970A861284F382700F319BB /* Polyline.framework */,
-				35228C541E5E17090082B14F /* MapboxDirections.framework */,
-				E970A85D284F380800F319BB /* MapboxDirections.framework */,
-				35228C521E5E17050082B14F /* Polyline.framework */,
-				DA5F58B61E85B24E00BA4D0A /* MapboxDirections.framework */,
-				DA5F58B71E85B24E00BA4D0A /* Polyline.framework */,
-				DA5F58E81E85BE5C00BA4D0A /* MapboxDirections.framework */,
-				DA5F58E91E85BE5C00BA4D0A /* Polyline.framework */,
-				DA5F58FF1E85C1B200BA4D0A /* MapboxDirections.framework */,
-				DA5F59001E85C1B200BA4D0A /* Polyline.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -203,6 +188,7 @@
 				35228C511E5E17040082B14F /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			wrapsLines = 0;
 		};
 		35EBDB5E1E5E1572006EB3CD /* Products */ = {
 			isa = PBXGroup;
@@ -304,6 +290,7 @@
 				35EBDB5A1E5E1572006EB3CD /* Headers */,
 				35EBDB5B1E5E1572006EB3CD /* Resources */,
 				DA2DFB411E84521100CEEBE9 /* Copy Instructions Property Lists */,
+				E97B0EBB2883D33B0012F4BE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
