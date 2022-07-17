@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  s.source = { :git => "https://github.com/Project-OSRM/osrm-text-instructions.swift.git", :tag => "v#{s.version.to_s}" }
+  s.source = { :git => "https://github.com/austinbrown34/osrm-text-instructions.swift.git", :tag => "v#{s.version.to_s}" }
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
@@ -46,7 +46,8 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.module_name = "OSRMTextInstructions"
 
-  s.dependency "MapboxDirections.swift", "~> 2.5.0"
+  s.dependency "Polyline", "~> 5.0.3"
+  s.dependency "Turf", "~> 2.4.0"
 
   s.prepare_command = "./json2plist.sh"
 
